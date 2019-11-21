@@ -1,0 +1,16 @@
+PROJECT: 
+
+To Create a virtual environment
+ WARNING: Ensure you're using the 'cmd' integrated terminal  
+$ python -m venv <Path/to/venv> // Creates a 'venv' folder
+$ .\venv\Scripts\activate.bat // activate the virtual environment
+
+You should see 
+(venv) C:\Link\where\you\are
+
+$ pip freeze - check installations (should be empty because you're in the virtual env)
+
+$ pip install django
+$ django-admin startproject btre
+
+
