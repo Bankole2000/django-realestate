@@ -13,4 +13,46 @@ $ pip freeze - check installations (should be empty because you're in the virtua
 $ pip install django
 $ django-admin startproject btre
 
+create pages app
+$ django-admin startapp pages
+
+add app to project FILE: settings.py
+
+to add static files, in project create a FOLDER: static 
+add and edit STATIC_URL properties in FILE: settings.py 
+copy static files and folders (css, javascript, images etc) into FOLDER: static and run 
+$ python manage.py collectstatic // to collect static files and add to project
+
+install PostgresQL
+
+PS C:\Program Files\PostgreSQL\10\data> pg_ctl -D . stop
+https://stackoverflow.com/questions/47311101/forgot-admin-password-on-postgres-windows-installation-cant-reset
+ALTER USER Postgres WITH PASSWORD '<newpassword>';
+pg_ctl -D C:\PostgreSQL\data start
+
+in the start menu, postgres is found by searching for psql
+
+Configure Django to use postgres
+Install pip postgres package
+
+$ pip install psycopg2
+$ pip install psycopg2-binary 
+
+Setup database parameters in FILE: settings.py 
+ie 
+
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'btredb', // DATABASE NAME
+    'USER': 'postgres', // DATABASE USERNAME
+    'PASSWORD': 'postgres', // USER PASSWORD
+    'HOST': 'localhost', // DATABASE HOST
+    ''
+  }
+}
+
+
+
+
 
