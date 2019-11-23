@@ -21,7 +21,18 @@ add app to project FILE: settings.py
 to add static files, in project create a FOLDER: static 
 add and edit STATIC_URL properties in FILE: settings.py 
 copy static files and folders (css, javascript, images etc) into FOLDER: static and run 
+
 $ python manage.py collectstatic // to collect static files and add to project
+
+to include static files on a page use
+{% load static %} at the top of the page
+
+Implementing the UI part 1 
+Create FOLDER: templates folder and create HTML FILE:s that represent Views
+Copy Base template into FILE: base.html and extend base to other 
+views. 
+Create partials FILE:S for other repetitive section of the UI 
+NOTE: Partials by convention are named with underscore first e.g. _navbar.html 
 
 install PostgresQL
 
