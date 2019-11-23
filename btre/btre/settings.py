@@ -25,13 +25,18 @@ SECRET_KEY = 'vt&s9zm1!8()qx6x6al3a%1o124-2ppwk&*+2yoophp8dq0-a^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'c76749c6.ngrok.io',
+    'localhost'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
+    'listings.apps.ListingsConfig',
+    'realtors.apps.RealtorsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
