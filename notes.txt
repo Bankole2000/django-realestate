@@ -8,6 +8,7 @@ $ .\venv\Scripts\activate.bat // activate the virtual environment
 You should see 
 (venv) C:\Link\where\you\are
 
+NOTE: All pip, and python manage.py commands should be done inside the venv environment
 $ pip freeze - check installations (should be empty because you're in the virtual env)
 
 $ pip install django
@@ -40,11 +41,11 @@ PS C:\Program Files\PostgreSQL\10\data> pg_ctl -D . stop
 https://stackoverflow.com/questions/47311101/forgot-admin-password-on-postgres-windows-installation-cant-reset
 ALTER USER Postgres WITH PASSWORD '<newpassword>';
 pg_ctl -D C:\PostgreSQL\data start
-
+ 
 in the start menu, postgres is found by searching for psql
 
 Configure Django to use postgres
-Install pip postgres package
+Install pip postgres package inside venv
 
 $ pip install psycopg2
 $ pip install psycopg2-binary 
@@ -63,7 +64,30 @@ DATABASES = {
   }
 }
 
+check database connection by running
+$ python manage.py makemigrations
 
+Create Model classes in FOLDER: <app name> FILE: models.py
 
+Check SQL commands
+$ python manage.py sqlmigrate <appname> 0001 (or file number)
+
+Run model creation 
+$ python manage.py migrate
+
+for images remember to install Pillow
+$ pip install Pillow
+
+Create Superuser for Admin area
+$ python manage.py createsuperuser
+
+Managing Site Media
+add the created models to the back end by editing the 
+FOLDER: <appname> FILE: admin.py // Register the models in the admin.py files
+
+To enable media storage
+edit the FOLDER: <projectName> FILE: urls.py file
+
+Customize the Admin Backend 
 
 
