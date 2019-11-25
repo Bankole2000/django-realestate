@@ -88,6 +88,20 @@ FOLDER: <appname> FILE: admin.py // Register the models in the admin.py files
 To enable media storage
 edit the FOLDER: <projectName> FILE: urls.py file
 
-Customize the Admin Backend 
+NOTE: Add a few model entries via the admin backend so you can have data to work with
 
+Customizing the Admin Backend
+1. in FOLDER: templates, create a new FOLDER: called "admin" 
+2. in the FOLDER: templates >> admin  create a FILE: "base_site.html" 
 
+Customizing the Tables in the Admin Area
+To customize the tables, in the FOLDER: <appname> open the FILE: admin.py and add the following function. example Listings folder admin.
+FUNC: 
+class <appname>Admin(admin.ModelAdmin):
+  list_display = ('model','props','to','display')
+  list_display_links = ('id','title')
+  list_editable = ('is_published',)
+  list_filter = ('realtor',)
+
+Importing data from database into the Views
+in the FOLDER: <appname> FILE: view.py 
