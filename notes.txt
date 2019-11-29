@@ -104,4 +104,12 @@ class <appname>Admin(admin.ModelAdmin):
   list_filter = ('realtor',)
 
 Importing data from database into the Views
-in the FOLDER: <appname> FILE: view.py 
+in the FOLDER: <appname> FILE: views.py
+
+import model from FILE: model
+Run query and assign variable to results
+pass in result in context dictionary
+pass context dictionary into request function as param
+
+Database Search Operations: 
+Filter by query field in GET request. 
