@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from listings.models import Listing
 
 # Create your views here.
 def register(request): 
@@ -71,4 +72,8 @@ def logout(request):
     return redirect('index')
 
 def dashboard(request): 
-  return render(request, 'accounts/dashboard.html')
+  listings = Listing.objects.order_by('-list_date').filter(is_published=True)
+  context = {
+    'listings' : listings 
+  }
+  return render(request, 'accounts/dashboard.html', context)
