@@ -26,7 +26,7 @@ SECRET_KEY = 'vt&s9zm1!8()qx6x6al3a%1o124-2ppwk&*+2yoophp8dq0-a^'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'c76749c6.ngrok.io',
+    'd2fcc7fe.ngrok.io',
     'localhost'
 ]
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
