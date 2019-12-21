@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from contacts.models import Contact
 from listings.models import Listing
 
 # Create your views here.
@@ -72,8 +73,11 @@ def logout(request):
     return redirect('index')
 
 def dashboard(request): 
-  listings = Listing.objects.order_by('-list_date').filter(is_published=True)
+  user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
+
+  # listings = Listing.objects.order_by('-list_date').filter(is_published=True)
   context = {
-    'listings' : listings 
+    # 'listings' : listings
+    'contacts': user_contacts 
   }
   return render(request, 'accounts/dashboard.html', context)

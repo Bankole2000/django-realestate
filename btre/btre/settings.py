@@ -148,6 +148,6 @@ MESSAGE_TAGS = {
 # Email Config
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = ''
-EMAIL_POST_PASSWORD = ''
+EMAIL_HOST_USER = 'techybanky@gmail.com'
+EMAIL_POST_PASSWORD = '1.41421356237'
 EMAIL_USE_TLS = True 
