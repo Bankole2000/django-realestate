@@ -47,6 +47,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Property</th>
                 <th></th>
+                <th></th>
               </tr>
             </thead>
             
@@ -57,6 +58,14 @@
               <td>{{ contact.listing }}</td>
               <td>
                 <a class="btn btn-light" href="{% url 'listing' contact.listing_id %}">View Listing</a>
+              </td>
+              <td>
+                <form action="{% url 'deleteContact' %}" method="post">
+                  {% csrf_token %}
+                  <input type="hidden" value="{{ contact.id }}" name="contact_id">
+                  <input type="submit" value="Delete Contact" class="btn btn-dark">
+                </form>
+                
               </td>
             </tr>
           {% endfor %}

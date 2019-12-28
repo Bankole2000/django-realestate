@@ -81,3 +81,12 @@ def dashboard(request):
     'contacts': user_contacts 
   }
   return render(request, 'accounts/dashboard.html', context)
+
+def deleteContact(request): 
+  if request.method == 'POST': 
+    contactid = request.POST['contact_id']
+    Contact.objects.filter(pk=contactid).delete()
+    messages.success(request, 'Contact Successfully Deleted')
+    return redirect('dashboard')
+  else:  
+    return redirect('dashboard')

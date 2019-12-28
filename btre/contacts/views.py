@@ -29,10 +29,11 @@ def contact(request):
     contact.save()
 
     # Send email 
+    # ( 'Subject', 'Body', 'From address, setup setup sender email', ['Send to','CC'], fail_silently = False )
     send_mail(
       'Property Listing Inquiry',
       'There has been an inquiry for ' + listing + '. Sign in to the admin panel for more information', 
-      'techybanky@gmail.com',
+      'ngeopolis@gmail.com',
       [realtor_email, 'ngeopolis@gmail.com'],
       fail_silently=False
     )

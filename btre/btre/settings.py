@@ -148,6 +148,7 @@ MESSAGE_TAGS = {
 # Email Config
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'techybanky@gmail.com'
-EMAIL_POST_PASSWORD = '1.41421356237'
+EMAIL_HOST_USER = 'ngeopolis@gmail.com'
+EMAIL_HOST_PASSWORD = 'ngeopolis1.'
 EMAIL_USE_TLS = True 
+# EMAIL_USE_SSL = True 
